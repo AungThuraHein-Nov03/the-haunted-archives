@@ -399,8 +399,8 @@ p {
 .document-card {
   display: grid;
   position: relative;
-  gap: clamp(1.5rem, 4vw, 4rem);
-  padding-block: clamp(2rem, 5vw, 4.5rem);
+  gap: clamp(1.5rem, 3vw, 3rem);
+  padding-block: clamp(2rem, 4vw, 3.75rem);
 }
 
 .document-card__folio {
@@ -409,10 +409,13 @@ p {
 
 .document-card__cover-link {
   align-self: start;
+  justify-self: start;
+  width: min(68vw, 14rem);
 }
 
 .document-card__cover {
   width: 100%;
+  height: auto;
   border: 1px solid rgba(232, 228, 216, 0.15);
   background: var(--paper-100);
   box-shadow: var(--shadow);
@@ -587,7 +590,11 @@ p {
   }
 
   .document-card {
-    grid-template-columns: 2rem minmax(12rem, 19rem) minmax(0, 1fr);
+    grid-template-columns: 2rem minmax(10rem, 14rem) minmax(0, 1fr);
+  }
+
+  .document-card__cover-link {
+    width: 100%;
   }
 
   .document-card__folio {
@@ -624,7 +631,7 @@ p {
   }
 
   .document-card {
-    grid-template-columns: 2.5rem minmax(16rem, 22rem) minmax(0, 1fr);
+    grid-template-columns: 2.5rem 15rem minmax(0, 1fr);
   }
 }
 
