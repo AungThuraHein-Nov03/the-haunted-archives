@@ -1,0 +1,25 @@
+{
+  "name": "the-haunted-archives-site",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sync:archive": "node scripts/sync-archive-assets.mjs",
+    "dev": "npm run sync:archive && astro dev",
+    "check": "npm run sync:archive && astro check",
+    "build": "npm run sync:archive && astro build",
+    "test": "node --test tests/*.test.mjs",
+    "verify": "npm test && npm run check && npm run build && node scripts/verify-build.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "3.7.4",
+    "astro": "7.3.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "typescript": "6.0.3"
+  },
+  "engines": {
+    "node": ">=22 <23"
+  }
+}

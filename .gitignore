@@ -1,0 +1,6 @@
+.superpowers/
+site/.astro/
+site/dist/
+site/node_modules/
+site/public/archive/
+

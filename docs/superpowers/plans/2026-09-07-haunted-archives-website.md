@@ -6,7 +6,7 @@
 
 **Architecture:** Astro 7 generates the archive homepage, informational pages, and one detail route per validated Markdown content record. A deterministic Node script copies canonical PDFs and covers from the repository-level `archive/` directory into Astro's ignored `site/public/archive/` build input; GitHub Pages deployment remains manual until the owner explicitly approves it.
 
-**Tech Stack:** Node.js 22, npm 10, Astro 7.3.1, TypeScript 7.0.2, `@astrojs/check` 0.9.10, `@astrojs/sitemap` 3.7.4, Node's built-in test runner, HTML/CSS, GitHub Pages Actions
+**Tech Stack:** Node.js 22, npm 10, Astro 7.3.1, TypeScript 6.0.3, `@astrojs/check` 0.9.10, `@astrojs/sitemap` 3.7.4, Node's built-in test runner, HTML/CSS, GitHub Pages Actions
 
 **Spec:** `docs/superpowers/specs/2026-09-07-haunted-archives-website-design.md`
 
@@ -25,6 +25,7 @@
 - Preserve direct PDF access when embedded viewing is unsupported.
 - Commit `site/package-lock.json`; never commit `site/node_modules/`, `site/dist/`, `site/.astro/`, `site/public/archive/`, or `.superpowers/`.
 - Use Node.js 22 locally and Node.js 22 in GitHub Actions.
+- Execute npm commands from the `site/` working directory; this npm build does not honor the local `--prefix site` setting for `npm install`.
 
 ## Planned File Map
 
@@ -108,7 +109,7 @@ Create `site/package.json`:
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
-    "typescript": "7.0.2"
+    "typescript": "6.0.3"
   },
   "engines": {
     "node": ">=22 <23"
@@ -118,7 +119,7 @@ Create `site/package.json`:
 
 - [ ] **Step 2: Install the approved dependency set and create the lockfile**
 
-Run: `npm install --prefix site`
+Run from `site/`: `npm install`
 
 Expected: npm creates `site/package-lock.json`; `npm ls --prefix site --depth=0` reports only Astro, sitemap, Astro check, and TypeScript as direct dependencies.
 
