@@ -1,0 +1,7 @@
+---
+import { getPublishedDocuments } from '../lib/documents';
+
+const documents = await getPublishedDocuments();
+---
+<h1>The Haunted Archives</h1>
+<p>{documents.length} investigations</p>
