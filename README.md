@@ -15,28 +15,28 @@ The Haunted Archives is a collection of evidence-led paranormal narrative nonfic
 <table>
   <tr>
     <td width="230" align="center">
-      <a href="./The%20Architecture%20of%20Silence.pdf">
-        <img src="./assets/the-architecture-of-silence-cover.png" width="210" alt="Cover of The Architecture of Silence">
+      <a href="./archive/documents/the-architecture-of-silence.pdf">
+        <img src="./archive/covers/the-architecture-of-silence.png" width="210" alt="Cover of The Architecture of Silence">
       </a>
     </td>
     <td>
       <h3>The Architecture of Silence</h3>
       <p><strong>Eastern State Penitentiary · Philadelphia · 19 pages</strong></p>
       <p>Examines the penitentiary's history, architecture, reported encounters, investigative methods, and the development of its haunted reputation.</p>
-      <p><a href="./The%20Architecture%20of%20Silence.pdf"><strong>Read the documentary →</strong></a></p>
+      <p><a href="./archive/documents/the-architecture-of-silence.pdf"><strong>Read the documentary →</strong></a></p>
     </td>
   </tr>
   <tr>
     <td width="230" align="center">
-      <a href="./The%20House%20That%20Named%20Its%20Ghosts.pdf">
-        <img src="./assets/the-house-that-named-its-ghosts-cover.png" width="210" alt="Cover of The House That Named Its Ghosts">
+      <a href="./archive/documents/the-house-that-named-its-ghosts.pdf">
+        <img src="./archive/covers/the-house-that-named-its-ghosts.png" width="210" alt="Cover of The House That Named Its Ghosts">
       </a>
     </td>
     <td>
       <h3>The House That Named Its Ghosts</h3>
       <p><strong>The Shanley Hotel · Napanoch, New York · 16 pages</strong></p>
       <p>Investigates the lives, legends, named spirits, witness accounts, and experimental methods associated with the hotel.</p>
-      <p><a href="./The%20House%20That%20Named%20Its%20Ghosts.pdf"><strong>Read the documentary →</strong></a></p>
+      <p><a href="./archive/documents/the-house-that-named-its-ghosts.pdf"><strong>Read the documentary →</strong></a></p>
     </td>
   </tr>
 </table>
