@@ -1,0 +1,43 @@
+---
+import { archiveUrl } from '../lib/urls';
+
+interface Props {
+  title: string;
+  pdfPath: string;
+}
+
+const { title, pdfPath } = Astro.props;
+const pdfUrl = archiveUrl(pdfPath);
+const iframeFallback = `<p>Embedded PDF support varies. <a href="${pdfUrl}">Open the PDF</a> or <a href="${pdfUrl}" download>download a copy</a>.</p>`;
+---
+
+<section class="pdf-reader shell" id="document-reader" aria-labelledby="reader-heading">
+  <header class="pdf-reader__header">
+    <div>
+      <p class="eyebrow">Reader</p>
+      <h2 id="reader-heading">Read the document</h2>
+    </div>
+    <div class="pdf-reader__actions" aria-label="PDF actions">
+      <a class="button" href="#document-reader">Read document</a>
+      <a class="button button--secondary" href={pdfUrl} target="_blank" rel="noreferrer">
+        Open PDF <span class="sr-only">in a new tab</span>
+      </a>
+      <a class="button button--secondary" href={pdfUrl} download>Download PDF</a>
+    </div>
+  </header>
+
+  <div class="pdf-reader__frame" id="reader-frame">
+    <iframe
+      src={pdfUrl}
+      title={`PDF reader for ${title}`}
+      loading="lazy"
+      set:html={iframeFallback}
+    />
+  </div>
+
+  <p class="pdf-reader__fallback">
+    Embedded PDF support varies by browser.
+    <a href={pdfUrl} target="_blank" rel="noreferrer">Open PDF in a new tab</a>
+    or <a href={pdfUrl} download>Download PDF</a>.
+  </p>
+</section>

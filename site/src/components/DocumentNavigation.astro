@@ -1,0 +1,31 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { siteUrl } from '../lib/urls';
+
+interface Props {
+  previous?: CollectionEntry<'documents'>;
+  next?: CollectionEntry<'documents'>;
+}
+
+const { previous, next } = Astro.props;
+---
+
+{
+  (previous || next) && (
+    <nav class="document-navigation shell" aria-label="Document navigation">
+      {previous ? (
+        <a class="document-navigation__link document-navigation__link--previous" href={siteUrl(`documents/${previous.id}/`)}>
+          <span>Previous document</span>
+          <strong>{previous.data.title}</strong>
+        </a>
+      ) : <span aria-hidden="true" />}
+
+      {next ? (
+        <a class="document-navigation__link document-navigation__link--next" href={siteUrl(`documents/${next.id}/`)}>
+          <span>Next document</span>
+          <strong>{next.data.title}</strong>
+        </a>
+      ) : <span aria-hidden="true" />}
+    </nav>
+  )
+}

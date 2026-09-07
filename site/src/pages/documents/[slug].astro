@@ -1,0 +1,73 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+import DocumentMetadata from '../../components/DocumentMetadata.astro';
+import DocumentNavigation from '../../components/DocumentNavigation.astro';
+import EvidenceNote from '../../components/EvidenceNote.astro';
+import PdfReader from '../../components/PdfReader.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getPublishedDocuments } from '../../lib/documents';
+import { archiveUrl } from '../../lib/urls';
+
+export async function getStaticPaths() {
+  const documents = await getPublishedDocuments();
+
+  return documents.map((document, index) => ({
+    params: { slug: document.id },
+    props: {
+      document,
+      previousDocument: documents[index - 1],
+      nextDocument: documents[index + 1],
+    },
+  }));
+}
+
+interface Props {
+  document: CollectionEntry<'documents'>;
+  previousDocument?: CollectionEntry<'documents'>;
+  nextDocument?: CollectionEntry<'documents'>;
+}
+
+const { document, previousDocument, nextDocument } = Astro.props;
+const { Content } = await render(document);
+const coverUrl = archiveUrl(document.data.cover);
+---
+
+<BaseLayout
+  title={document.data.title}
+  description={document.data.description}
+  image={coverUrl}
+>
+  <article class="document-detail shell">
+    <header class="document-detail__header">
+      <div class="document-detail__cover-wrap">
+        <img
+          class="document-detail__cover"
+          src={coverUrl}
+          alt={`Cover of ${document.data.title}`}
+          width="612"
+          height="792"
+        />
+      </div>
+
+      <div class="document-detail__introduction">
+        <p class="eyebrow">Archive document</p>
+        <DocumentMetadata
+          documentNumber={document.data.documentNumber}
+          location={document.data.location}
+          pageCount={document.data.pageCount}
+        />
+        <h1>{document.data.title}</h1>
+        {document.data.subtitle && <p class="document-detail__subtitle">{document.data.subtitle}</p>}
+        <p class="document-detail__description">{document.data.description}</p>
+      </div>
+    </header>
+
+    <div class="document-detail__body prose">
+      <Content />
+    </div>
+  </article>
+
+  <EvidenceNote />
+  <PdfReader title={document.data.title} pdfPath={document.data.pdf} />
+  <DocumentNavigation previous={previousDocument} next={nextDocument} />
+</BaseLayout>
