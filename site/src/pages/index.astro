@@ -1,7 +1,13 @@
 ---
 import { getPublishedDocuments } from '../lib/documents';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 const documents = await getPublishedDocuments();
 ---
-<h1>The Haunted Archives</h1>
-<p>{documents.length} investigations</p>
+<BaseLayout
+  title="The Haunted Archives"
+  description="Evidence-led paranormal narrative nonfiction documenting history, reported encounters, folklore, and possible natural explanations."
+>
+  <h1>The Haunted Archives</h1>
+  <p>{documents.length} investigations</p>
+</BaseLayout>

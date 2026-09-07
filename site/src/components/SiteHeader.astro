@@ -1,0 +1,22 @@
+---
+import { siteUrl } from '../lib/urls';
+
+const repositoryUrl = 'https://github.com/AungThuraHein-Nov03/the-haunted-archives';
+---
+
+<header class="site-header">
+  <div class="shell site-header__inner">
+    <a class="wordmark" href={siteUrl()} aria-label="The Haunted Archives, archive home">
+      <span class="wordmark__mark" aria-hidden="true">HA</span>
+      <span class="wordmark__name">The Haunted Archives</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <ul class="site-nav">
+        <li><a href={siteUrl()}>Archive</a></li>
+        <li><a href={siteUrl('methodology/')}>Methodology</a></li>
+        <li><a href={siteUrl('about/')}>About</a></li>
+        <li><a href={repositoryUrl}>GitHub <span aria-hidden="true">↗</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
