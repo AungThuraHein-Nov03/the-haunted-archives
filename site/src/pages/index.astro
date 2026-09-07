@@ -1,13 +1,38 @@
 ---
 import { getPublishedDocuments } from '../lib/documents';
+import ArchiveHeader from '../components/ArchiveHeader.astro';
+import DocumentCard from '../components/DocumentCard.astro';
+import EvidenceNote from '../components/EvidenceNote.astro';
+import MethodologySummary from '../components/MethodologySummary.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const documents = await getPublishedDocuments();
+const pageCount = documents.reduce((total, document) => total + document.data.pageCount, 0);
+const locationCount = new Set(documents.map((document) => document.data.location)).size;
 ---
 <BaseLayout
   title="The Haunted Archives"
   description="Evidence-led paranormal narrative nonfiction documenting history, reported encounters, folklore, and possible natural explanations."
 >
-  <h1>The Haunted Archives</h1>
-  <p>{documents.length} investigations</p>
+  <ArchiveHeader
+    documentCount={documents.length}
+    pageCount={pageCount}
+    locationCount={locationCount}
+  />
+
+  <section class="archive-index shell" aria-labelledby="archive-heading">
+    <header class="section-heading">
+      <p class="eyebrow">The collection</p>
+      <h2 id="archive-heading">Archive index</h2>
+      <p>Two investigations presented as records for close reading.</p>
+    </header>
+    <ol class="document-list">
+      {documents.map((document) => (
+        <li><DocumentCard document={document} /></li>
+      ))}
+    </ol>
+  </section>
+
+  <EvidenceNote />
+  <MethodologySummary />
 </BaseLayout>

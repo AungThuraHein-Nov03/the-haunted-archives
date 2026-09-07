@@ -1,0 +1,30 @@
+---
+import { siteUrl } from '../lib/urls';
+
+const distinctions = [
+  ['History', 'Presented as documented fact.'],
+  ['Testimony', 'Preserved as eyewitness account.'],
+  ['Folklore', 'Identified as tradition or urban legend.'],
+  ['Paranormal claims', 'Reported without becoming conclusions.'],
+  ['Natural explanations', 'Considered as hypotheses with equal caution.'],
+];
+---
+
+<section class="method-summary shell" aria-labelledby="method-heading">
+  <header class="method-summary__heading">
+    <p class="eyebrow">How the archive reads evidence</p>
+    <h2 id="method-heading">Mystery, with its boundaries visible.</h2>
+    <a href={siteUrl('methodology/')}>Read the methodology</a>
+  </header>
+  <ol class="method-summary__list">
+    {distinctions.map(([term, definition], index) => (
+      <li>
+        <span>{String(index + 1).padStart(2, '0')}</span>
+        <div>
+          <h3>{term}</h3>
+          <p>{definition}</p>
+        </div>
+      </li>
+    ))}
+  </ol>
+</section>

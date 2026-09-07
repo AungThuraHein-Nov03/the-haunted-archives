@@ -1,0 +1,41 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { archiveUrl, siteUrl } from '../lib/urls';
+import DocumentMetadata from './DocumentMetadata.astro';
+
+interface Props {
+  document: CollectionEntry<'documents'>;
+}
+
+const { document } = Astro.props;
+const detailUrl = siteUrl(`documents/${document.id}/`);
+const coverUrl = archiveUrl(document.data.cover);
+---
+
+<article class="document-card">
+  <div class="document-card__folio" aria-hidden="true">
+    <span>Document</span>
+    <strong>{String(document.data.documentNumber).padStart(2, '0')}</strong>
+  </div>
+  <a class="document-card__cover-link" href={detailUrl} tabindex="-1" aria-hidden="true">
+    <img
+      class="document-card__cover"
+      src={coverUrl}
+      alt=""
+      width="612"
+      height="792"
+      loading="lazy"
+    />
+  </a>
+  <div class="document-card__body">
+    <DocumentMetadata
+      documentNumber={document.data.documentNumber}
+      location={document.data.location}
+      pageCount={document.data.pageCount}
+    />
+    <h3><a href={detailUrl}>{document.data.title}</a></h3>
+    {document.data.subtitle && <p class="document-card__subtitle">{document.data.subtitle}</p>}
+    <p class="document-card__description">{document.data.description}</p>
+    <a class="document-card__action" href={detailUrl}>View document</a>
+  </div>
+</article>

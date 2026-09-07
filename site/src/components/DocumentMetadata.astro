@@ -1,0 +1,24 @@
+---
+interface Props {
+  documentNumber: number;
+  location: string;
+  pageCount: number;
+}
+
+const { documentNumber, location, pageCount } = Astro.props;
+---
+
+<dl class="document-meta">
+  <div>
+    <dt>Record</dt>
+    <dd>{String(documentNumber).padStart(2, '0')}</dd>
+  </div>
+  <div>
+    <dt>Location</dt>
+    <dd>{location}</dd>
+  </div>
+  <div>
+    <dt>Extent</dt>
+    <dd>{pageCount} pages</dd>
+  </div>
+</dl>

@@ -1,0 +1,38 @@
+---
+interface Props {
+  documentCount: number;
+  pageCount: number;
+  locationCount: number;
+}
+
+const { documentCount, pageCount, locationCount } = Astro.props;
+---
+
+<section class="archive-hero">
+  <div class="archive-hero__lightwell" aria-hidden="true"></div>
+  <div class="shell archive-hero__inner">
+    <div class="archive-hero__copy">
+      <p class="archive-hero__index">Archive index / {String(documentCount).padStart(2, '0')}</p>
+      <h1>Documented history.<br />Reported encounters.</h1>
+      <p class="archive-hero__line">The space between them.</p>
+      <p class="archive-hero__description">
+        Evidence-led paranormal narrative nonfiction, preserved for close reading.
+      </p>
+      <a class="archive-hero__link" href="#archive-heading">Browse the documents</a>
+    </div>
+    <dl class="archive-totals" aria-label="Archive totals">
+      <div>
+        <dt>Investigations</dt>
+        <dd>{String(documentCount).padStart(2, '0')}</dd>
+      </div>
+      <div>
+        <dt>Documented pages</dt>
+        <dd>{pageCount}</dd>
+      </div>
+      <div>
+        <dt>Historic locations</dt>
+        <dd>{String(locationCount).padStart(2, '0')}</dd>
+      </div>
+    </dl>
+  </div>
+</section>
