@@ -58,3 +58,43 @@ The aim is to preserve the mystery of each location while keeping the boundary b
 ## Reading the Archive
 
 Select a documentary in the table above to view it on GitHub. From the document page, use the download control if you prefer to read the original PDF locally.
+
+## Website development
+
+The archive website is a static Astro project in `site/` and requires Node.js 22 with npm.
+
+Install its dependencies from the repository root:
+
+```sh
+npm install --prefix site
+```
+
+Start the local development server:
+
+```sh
+npm run dev --prefix site
+```
+
+Run the tests, Astro checks, production build, and generated-output verification:
+
+```sh
+npm run verify --prefix site
+```
+
+## Repository structure
+
+- `archive/` contains the source PDF documents and cover images.
+- `site/` contains the Astro website, document records, tests, and build scripts.
+- `.github/workflows/` contains the manual GitHub Pages deployment workflow.
+
+The website build copies archive files into `site/public/archive/`. Those generated copies are not the source of record and should not be edited directly.
+
+## Adding a document
+
+1. Add the finished PDF to `archive/documents/`.
+2. Add its PNG cover to `archive/covers/` using the same lowercase, hyphenated filename stem as the PDF.
+3. Add a Markdown record to `site/src/content/documents/` following the existing records and content schema.
+4. Run `npm run verify --prefix site` to validate the record, synchronize the archive files, and verify the production output.
+5. Review the generated document page locally before committing the new archive entry.
+
+Deployment is manually triggered through the GitHub Pages workflow only after owner approval.
