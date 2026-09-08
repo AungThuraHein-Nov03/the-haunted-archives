@@ -1,0 +1,42 @@
+---
+import EvidenceNote from '../components/EvidenceNote.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const repositoryUrl = 'https://github.com/AungThuraHein-Nov03/the-haunted-archives';
+---
+
+<BaseLayout
+  title="About"
+  description="About The Haunted Archives, a public collection of evidence-led paranormal narrative nonfiction."
+>
+  <header class="information-hero shell">
+    <p class="eyebrow">About the collection</p>
+    <h1>The archive and its purpose.</h1>
+    <p class="information-hero__lead">
+      The Haunted Archives is a collection of evidence-led paranormal narrative nonfiction.
+    </p>
+  </header>
+
+  <section class="information-section about-record shell" aria-labelledby="repository-heading">
+    <header class="information-section__heading">
+      <p class="eyebrow">Public repository</p>
+      <h2 id="repository-heading">Documents and website, maintained together.</h2>
+    </header>
+
+    <div class="about-record__body">
+      <p>
+        Each documentary examines a location's documented history, reported encounters,
+        folklore, and possible natural explanations without presenting paranormal
+        interpretation as established fact.
+      </p>
+      <p>
+        The documents and this website are maintained in the same public GitHub repository.
+      </p>
+      <a class="button button--secondary" href={repositoryUrl} target="_blank" rel="noreferrer">
+        View the public repository <span class="sr-only">in a new tab</span>
+      </a>
+    </div>
+  </section>
+
+  <EvidenceNote />
+</BaseLayout>

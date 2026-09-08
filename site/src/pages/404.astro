@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteUrl } from '../lib/urls';
+---
+
+<BaseLayout
+  title="Record not found"
+  description="The requested entry could not be found in The Haunted Archives."
+>
+  <section class="recovery-page shell" aria-labelledby="recovery-heading">
+    <p class="eyebrow">Archive status / 404</p>
+    <h1 id="recovery-heading">Record not found</h1>
+    <p>The requested archive entry may have moved, or its address may be incomplete.</p>
+    <a class="button" href={siteUrl()}>Return to the archive</a>
+  </section>
+</BaseLayout>

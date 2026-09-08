@@ -1,0 +1,44 @@
+---
+import EvidenceNote from '../components/EvidenceNote.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Methodology"
+  description="How The Haunted Archives distinguishes documented history, testimony, folklore, paranormal claims, and possible natural explanations."
+>
+  <header class="information-hero shell">
+    <p class="eyebrow">Editorial methodology</p>
+    <h1>Evidence stays in its proper category.</h1>
+    <p class="information-hero__lead">
+      The archive preserves uncertainty without blurring the line between the historical record
+      and supernatural interpretation.
+    </p>
+  </header>
+
+  <section class="information-section shell" aria-labelledby="distinctions-heading">
+    <header class="information-section__heading">
+      <p class="eyebrow">Evidence framework</p>
+      <h2 id="distinctions-heading">Five distinctions</h2>
+    </header>
+
+    <ol class="evidence-framework" role="list">
+      <li><span aria-hidden="true">01</span><p>Documented history is presented as fact.</p></li>
+      <li><span aria-hidden="true">02</span><p>Eyewitness accounts are treated as testimony.</p></li>
+      <li><span aria-hidden="true">03</span><p>Folklore and urban legends are identified as such.</p></li>
+      <li><span aria-hidden="true">04</span><p>Paranormal interpretations remain claims rather than conclusions.</p></li>
+      <li><span aria-hidden="true">05</span><p>Natural explanations are considered as hypotheses with the same caution.</p></li>
+    </ol>
+  </section>
+
+  <section class="methodology-caution shell" aria-labelledby="caution-heading">
+    <p class="eyebrow">Limits of interpretation</p>
+    <div>
+      <h2 id="caution-heading">Claims are not conclusions.</h2>
+      <p>The archive does not rate supernatural claims as proven.</p>
+      <p>Possible natural explanations are hypotheses subject to the same caution.</p>
+    </div>
+  </section>
+
+  <EvidenceNote />
+</BaseLayout>
