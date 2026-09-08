@@ -4,6 +4,8 @@
 
 *Documented history. Reported encounters. The space between them.*
 
+**[Visit The Haunted Archives →](https://aungthurahein-nov03.github.io/the-haunted-archives/)**
+
 **2 investigations · 35 pages · 2 historic locations**
 
 </div>
