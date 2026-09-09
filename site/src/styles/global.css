@@ -408,9 +408,9 @@ p {
 }
 
 .document-card__cover-link {
-  align-self: start;
+  align-self: center;
   justify-self: start;
-  width: min(68vw, 14rem);
+  width: min(72vw, 15rem);
 }
 
 .document-card__cover {
@@ -866,7 +866,7 @@ p {
   }
 
   .document-card {
-    grid-template-columns: 2rem minmax(10rem, 14rem) minmax(0, 1fr);
+    grid-template-columns: 2rem minmax(10rem, 15rem) minmax(0, 1fr);
   }
 
   .document-card__cover-link {
@@ -947,7 +947,7 @@ p {
   }
 
   .document-card {
-    grid-template-columns: 2.5rem 15rem minmax(0, 1fr);
+    grid-template-columns: 2.5rem 17rem minmax(0, 1fr);
   }
 }
 

@@ -6,7 +6,7 @@
 
 **[Visit The Haunted Archives →](https://aungthurahein-nov03.github.io/the-haunted-archives/)**
 
-**2 investigations · 35 pages · 2 historic locations**
+**3 investigations · 50 pages · 3 historic locations**
 
 </div>
 
@@ -39,6 +39,19 @@ The Haunted Archives is a collection of evidence-led paranormal narrative nonfic
       <p><strong>The Shanley Hotel · Napanoch, New York · 16 pages</strong></p>
       <p>Investigates the lives, legends, named spirits, witness accounts, and experimental methods associated with the hotel.</p>
       <p><a href="./archive/documents/the-house-that-named-its-ghosts.pdf"><strong>Read the documentary →</strong></a></p>
+    </td>
+  </tr>
+  <tr>
+    <td width='230' align='center'>
+      <a href='./archive/documents/sweet-springs-the-name-that-remained.pdf'>
+        <img src='./archive/covers/sweet-springs-the-name-that-remained.png' width='210' alt='Cover of Sweet Springs: The Name That Remained'>
+      </a>
+    </td>
+    <td>
+      <h3>Sweet Springs: The Name That Remained</h3>
+      <p><strong>Old Sweet Springs · Monroe County, West Virginia · 15 pages</strong></p>
+      <p>Examines Old Sweet Springs’ resort history, brief tuberculosis sanatorium period, decades of elder care, modern paranormal reputation, reported encounters, and possible environmental and perceptual explanations.</p>
+      <p><a href='./archive/documents/sweet-springs-the-name-that-remained.pdf'><strong>Read the documentary →</strong></a></p>
     </td>
   </tr>
 </table>

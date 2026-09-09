@@ -9,14 +9,17 @@ const htmlFiles = [
   '404.html',
   'documents/the-architecture-of-silence/index.html',
   'documents/the-house-that-named-its-ghosts/index.html',
+  'documents/sweet-springs-the-name-that-remained/index.html',
 ];
 
 const requiredFiles = [
   ...htmlFiles,
   'archive/covers/the-architecture-of-silence.png',
   'archive/covers/the-house-that-named-its-ghosts.png',
+  'archive/covers/sweet-springs-the-name-that-remained.png',
   'archive/documents/the-architecture-of-silence.pdf',
   'archive/documents/the-house-that-named-its-ghosts.pdf',
+  'archive/documents/sweet-springs-the-name-that-remained.pdf',
   'sitemap-index.xml',
 ];
 
