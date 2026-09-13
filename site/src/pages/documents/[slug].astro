@@ -1,5 +1,6 @@
 ---
 import { render, type CollectionEntry } from 'astro:content';
+import ContentAdvisory from '../../components/ContentAdvisory.astro';
 import DocumentMetadata from '../../components/DocumentMetadata.astro';
 import DocumentNavigation from '../../components/DocumentNavigation.astro';
 import EvidenceNote from '../../components/EvidenceNote.astro';
@@ -61,6 +62,12 @@ const coverUrl = archiveUrl(document.data.cover);
         <p class="document-detail__description">{document.data.description}</p>
       </div>
     </header>
+
+    {
+      document.data.contentAdvisory && (
+        <ContentAdvisory text={document.data.contentAdvisory} />
+      )
+    }
 
     <div class="document-detail__body prose">
       <Content />

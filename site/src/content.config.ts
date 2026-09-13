@@ -14,6 +14,7 @@ const documents = defineCollection({
     period: z.string().min(1).optional(),
     pageCount: z.number().int().positive(),
     description: z.string().min(1),
+    contentAdvisory: z.string().trim().min(1).optional(),
     cover: z.string().regex(/^covers\/[a-z0-9-]+\.png$/),
     pdf: z.string().regex(/^documents\/[a-z0-9-]+\.pdf$/),
     featured: z.boolean(),

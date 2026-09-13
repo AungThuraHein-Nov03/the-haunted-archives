@@ -1,0 +1,18 @@
+---
+interface Props {
+  text?: string;
+}
+
+const advisory = Astro.props.text?.trim();
+---
+
+{
+  advisory && (
+    <aside class="content-advisory" aria-labelledby="content-advisory-title">
+      <p class="content-advisory__label" id="content-advisory-title">
+        Content Advisory
+      </p>
+      <p class="content-advisory__text">{advisory}</p>
+    </aside>
+  )
+}

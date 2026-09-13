@@ -596,12 +596,45 @@ p {
   font-size: clamp(1rem, 1.6vw, 1.16rem);
 }
 
+.content-advisory {
+  display: grid;
+  max-width: var(--reading);
+  gap: 0.75rem;
+  margin: clamp(3rem, 7vw, 5rem) 0 0 auto;
+  padding: clamp(1.2rem, 3vw, 1.75rem) 0 clamp(1.2rem, 3vw, 1.75rem)
+    clamp(1.15rem, 3vw, 1.75rem);
+  border-block: 1px solid var(--rule);
+  border-left: 2px solid var(--rust-400);
+}
+
+.content-advisory__label,
+.content-advisory__text {
+  margin: 0;
+}
+
+.content-advisory__label {
+  color: var(--rust-400);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.content-advisory__text {
+  max-width: 38rem;
+  color: var(--paper-300);
+}
+
 .document-detail__body {
   max-width: var(--reading);
   margin: clamp(4rem, 9vw, 7rem) 0 0 auto;
   padding-top: clamp(2rem, 5vw, 3.5rem);
   border-top: 1px solid var(--rule);
   color: var(--paper-300);
+}
+
+.content-advisory + .document-detail__body {
+  margin-top: clamp(2.5rem, 6vw, 4.5rem);
 }
 
 .document-detail__body p:last-child {
@@ -906,6 +939,11 @@ p {
 
   .document-detail__cover-wrap {
     width: 100%;
+  }
+
+  .content-advisory {
+    grid-template-columns: minmax(8rem, 0.35fr) minmax(0, 1fr);
+    gap: 2rem;
   }
 
   .pdf-reader__header {
