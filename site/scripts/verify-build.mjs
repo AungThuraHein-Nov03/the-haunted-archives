@@ -10,6 +10,7 @@ const htmlFiles = [
   'documents/the-architecture-of-silence/index.html',
   'documents/the-house-that-named-its-ghosts/index.html',
   'documents/sweet-springs-the-name-that-remained/index.html',
+  'documents/aokigahara-the-forest-beneath-the-reputation/index.html',
 ];
 
 const requiredFiles = [
@@ -17,9 +18,11 @@ const requiredFiles = [
   'archive/covers/the-architecture-of-silence.png',
   'archive/covers/the-house-that-named-its-ghosts.png',
   'archive/covers/sweet-springs-the-name-that-remained.png',
+  'archive/covers/aokigahara-the-forest-beneath-the-reputation.png',
   'archive/documents/the-architecture-of-silence.pdf',
   'archive/documents/the-house-that-named-its-ghosts.pdf',
   'archive/documents/sweet-springs-the-name-that-remained.pdf',
+  'archive/documents/aokigahara-the-forest-beneath-the-reputation.pdf',
   'sitemap-index.xml',
 ];
 

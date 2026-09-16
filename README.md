@@ -6,7 +6,7 @@
 
 **[Visit The Haunted Archives →](https://aungthurahein-nov03.github.io/the-haunted-archives/)**
 
-**3 investigations · 50 pages · 3 historic locations**
+**4 investigations · 64 pages · 4 historic locations**
 
 </div>
 
@@ -52,6 +52,19 @@ The Haunted Archives is a collection of evidence-led paranormal narrative nonfic
       <p><strong>Old Sweet Springs · Monroe County, West Virginia · 15 pages</strong></p>
       <p>Examines Old Sweet Springs’ resort history, brief tuberculosis sanatorium period, decades of elder care, modern paranormal reputation, reported encounters, and possible environmental and perceptual explanations.</p>
       <p><a href='./archive/documents/sweet-springs-the-name-that-remained.pdf'><strong>Read the documentary →</strong></a></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="230" align="center">
+      <a href="./archive/documents/aokigahara-the-forest-beneath-the-reputation.pdf">
+        <img src="./archive/covers/aokigahara-the-forest-beneath-the-reputation.png" width="210" alt="Cover of Aokigahara: The Forest Beneath the Reputation">
+      </a>
+    </td>
+    <td>
+      <h3>Aokigahara: The Forest Beneath the Reputation</h3>
+      <p><strong>Aokigahara · Yamanashi Prefecture, Japan · 14 pages</strong></p>
+      <p>Examines Aokigahara’s volcanic ecology, cultural history, modern reputation, reported paranormal encounters, and the environmental and perceptual factors that may shape those accounts.</p>
+      <p><a href="./archive/documents/aokigahara-the-forest-beneath-the-reputation.pdf"><strong>Read the documentary →</strong></a></p>
     </td>
   </tr>
 </table>
