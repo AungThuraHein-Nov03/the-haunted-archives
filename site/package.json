@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "sync:archive": "node scripts/sync-archive-assets.mjs",
+    "preview:cover": "node scripts/preview-cover.mjs",
     "dev": "npm run sync:archive && astro dev",
     "check": "npm run sync:archive && astro check",
     "build": "npm run sync:archive && astro build",

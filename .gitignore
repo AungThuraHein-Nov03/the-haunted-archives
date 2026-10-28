@@ -3,4 +3,5 @@ site/.astro/
 site/dist/
 site/node_modules/
 site/public/archive/
+/tmp/cover-previews/
 

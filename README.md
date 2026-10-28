@@ -115,12 +115,28 @@ npm run verify --prefix site
 - `site/` contains the Astro website, document records, tests, and build scripts.
 - `.github/workflows/` contains the manual GitHub Pages deployment workflow.
 
-The website build copies archive files into `site/public/archive/`. Those generated copies are not the source of record and should not be edited directly.
+The website build creates missing page-1 PNG covers in `archive/covers/` and copies archive files into `site/public/archive/`. Commit newly generated source covers alongside their PDFs. Generated public copies are not the source of record and should not be edited directly.
+
+## Preview a PDF cover safely
+
+Run from the repository root to render page 1 of Aokigahara into an ignored temporary folder:
+
+```sh
+npm run preview:cover --prefix site
+```
+
+To preview any other PDF (Windows PowerShell, including paths containing spaces):
+
+```powershell
+npm run preview:cover --prefix site -- "C:\\path\\to\\your documentary.pdf"
+```
+
+The command prints the absolute location of the new PNG. Open it in VS Code or File Explorer to inspect the cover; each run creates a separate temporary preview directory under `tmp/cover-previews/`. It never modifies the published `archive/covers/` files, and requires Poppler `pdftoppm` on `PATH`.
 
 ## Adding a document
 
 1. Add the finished PDF to `archive/documents/`.
-2. Add its PNG cover to `archive/covers/` using the same lowercase, hyphenated filename stem as the PDF.
+2. The build automatically generates a PNG cover from page 1 if a matching cover does not exist. This requires Poppler's `pdftoppm` on `PATH` (Windows: install Poppler and add its `bin` directory to `PATH`; Ubuntu: `sudo apt-get install poppler-utils`). Existing covers are preserved.
 3. Add a Markdown record to `site/src/content/documents/` following the existing records and content schema.
 4. Run `npm run verify --prefix site` to validate the record, synchronize the archive files, and verify the production output.
 5. Review the generated document page locally before committing the new archive entry.
